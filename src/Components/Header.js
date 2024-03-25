@@ -1,0 +1,26 @@
+//import { AppBar, Container, Toolbar, Typography } from '@material-ui/core'
+import React from 'react'
+import logo from "../photos/logo.png"
+
+const Header = () => {
+    return(
+        /*<AppBar color='transparent' position='static'>
+            <Container>
+                <Toolbar>
+                    <Typography>Crypto</Typography>
+                </Toolbar>
+            </Container>
+        </AppBar>*/
+        <main class='main'>
+            <section class="main_section">
+                <img className='img' src={logo}
+                alt="Crypto Currency Wallet"/>
+            </section>
+            <section class="main_section">
+                <h1 className="h1">CRYPTO CURRENCIES WALLET</h1>
+            </section>
+        </main>
+    )
+};
+
+export default Header;
