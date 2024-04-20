@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from './Components/Header/Header';
 import Userinterface from "./Pages/UserInterface/Userinterface";
-import Register from "./Pages/Register";
-import Login from "./Pages/Login";
+import Register from "./Pages/Signup/Register";
+import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import Users from "./Pages/Users";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"

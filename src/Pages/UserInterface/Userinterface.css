@@ -96,7 +96,7 @@
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 435px){
     .main-head{
         font-size: 8.5vw;
         width: 100vw;
@@ -396,15 +396,52 @@
 }
 
 .ChooseBank{
-    width: 100%;
+    width: 100vw;
+    height: 100%;
+    color: #000000;
+    position: relative;
     display: flex;
-    gap: 32px;
-    overflow-x: auto;
-    scrollbar-color: transparent transparent;
-    user-select: none;
-    background-color: rgba(213, 213, 213, 0.963);
+    align-items: center;
+    justify-content: center;
 }
 
-.ChooseBank::-webkit-scrollbar{
-    
+.Withdraw-Method{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #A4DCFC;
+    padding: 30px 20px;
+}
+
+.Withdraw-Method1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 20px;
+    width: 100vw;
+}
+
+.Withdraw-Method2{
+    object-fit: cover;
+    width: 30%;
+    height: 100%;
+    border-radius: 0.5rem;
+    max-width: 250px;
+    aspect-ratio: 16/9;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.Userinterface-Footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #031556;
+}
+
+.Footer-Name{
+    color: white;
+    margin: 0px;
 }

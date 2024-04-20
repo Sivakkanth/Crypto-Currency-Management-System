@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './Register.css'
+import './Signup/Register.css'
 import { Link, useParams, useNavigate } from "react-router-dom";
 
 export default function Withdrawal() {

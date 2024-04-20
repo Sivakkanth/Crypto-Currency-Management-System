@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../Components/Header/Header'
 import './Userinterface.css'
@@ -18,19 +18,29 @@ import Feature2 from '../../photos/Feature.png'
 import videofeature1 from '../../videos/featurevideo.mp4'
 import Steps from '../../Components/UserInterfaceCom/Steps';
 import { PiNumberCircleOneFill, PiNumberCircleTwoFill, PiNumberCircleThreeFill } from "react-icons/pi";
+import peoplebank from '../../photos/peoplebank.jpeg'
+import boc from '../../photos/boc.png'
+import payeer from '../../photos/Payeer.png'
+import frimi from '../../photos/frimi.jpg'
+import ntb from '../../photos/ntb.jpeg'
+import commercial from '../../photos/Commercial.jpg'
+import hnb from '../../photos/hnb.png'
+import nsb from '../../photos/NSB.jpg'
+import lolc from '../../photos/lolc.jpeg'
+import MovingComponents from '../../Components/UserInterfaceCom/MovingComponents';
 
 export default function Userinterface() {
+  const itemsref = useRef(null);
   const Banks=[
-    {id:1, title:'People', icon:'p1'},
-    {id:2, title:'BOC', icon:'p1'},
-    {id:3, title:'Commercial', icon:'p1'},
-    {id:4, title:'NTB', icon:'p1'},
-    {id:5, title:'NDB', icon:'p1'},
-    {id:6, title:'LOLC', icon:'p1'},
-    {id:7, title:'Payeer', icon:'p1'},
-    {id:8, title:'Frimi', icon:'p1'},
-    {id:9, title:'HNB', icon:'p1'},
-    {id:10, title:'NSB', icon:'p1'},
+    {id:1, title:'People Bank', src:peoplebank},
+    {id:2, title:'BOC', src:boc},
+    {id:3, title:'Payeer', src:payeer},
+    {id:4, title:'Frimi', src:frimi},
+    {id:5, title:'NTB', src:ntb},
+    {id:6, title:'Commercial', src:commercial},
+    {id:7, title:'HNB', src:hnb},
+    {id:8, title:'NSB', src:nsb},
+    {id:9, title:'LOLC', src:lolc}
   ];
   return (
     <div className='userinterface-class'>
@@ -99,27 +109,17 @@ export default function Userinterface() {
       </div>
       <div className='Important-of-Website'>
         <p className='Important-of-Website1'>Bank Withdraw Method</p>
-        <div className='ChooseBank'>
-          {
-            Banks.map((bank) => (
-              <div className='bank' key={bank.id}>
-                <div className='bankIcon'>
-                  <img src={bank.title}/>
-                </div>
-                <div>
-                  {bank.title}
-                </div>
-              </div>
-            ))
-          }
+        <MovingComponents/>
+      </div>
+      <div className='Withdraw-Method'>
+        <p className='Important-of-Website1'>Coin Withdraw Method</p>
+        <div className='Withdraw-Method1'>
+          <img className='Withdraw-Method2' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5ckWh1oJLmIrUkW5g62TiRXCoSGNrDvr_3PU7JBpuQ&s'/>
+          <img className='Withdraw-Method2' src='https://www.logo.wine/a/logo/Binance/Binance-Vertical2-Dark-Background-Logo.wine.svg'/>
         </div>
       </div>
-      <div>
-        <p>Coin Withdraw Method</p>
-        <p>Move the wallet name</p>
-      </div>
-      <div>
-        don't copy
+      <div className='Userinterface-Footer'>
+        <p className='Footer-Name'>Crypto Currency 2024</p>
       </div>
     </div>  
   )

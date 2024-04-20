@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './Register.css';
+import './Signup/Register.css';
 import { Link, useParams, useNavigate } from "react-router-dom";
 
 export default function Deposit() {
@@ -50,7 +50,7 @@ export default function Deposit() {
     })
     .then(response =>{
       setsum(newBalance);
-      setMessage(`Deposit of $${amount} was successful. New balance: $${newBalance}`);
+      setMessage(`Deposit of $${amount}.00 was successful. New balance: $${newBalance}`);
       setdepositvalue('');
     })
     .catch(error=>{

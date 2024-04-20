@@ -1,6 +1,6 @@
 import axios, { Axios } from 'axios';
 import './cryptolist.css';
-import './Home.css';
+import '../Pages/Home/Home.css';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
