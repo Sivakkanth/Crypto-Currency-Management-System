@@ -9,7 +9,7 @@ import Users from "./Pages/Users";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import Update from "./Pages/Update";
 import personal from "./Pages/personal";
-import Deposit from "./Pages/Deposit";
+import Deposit from "./Pages/Deposit/Deposit";
 import Withdrawal from "./Pages/Withdrawal";
 import CoinWallet from "./Pages/CoinWallet";
 import Send from "./Pages/Send";

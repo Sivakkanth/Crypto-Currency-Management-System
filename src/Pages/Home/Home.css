@@ -22,8 +22,19 @@
   .home-menu-buttons{
     visibility: hidden;
   }
-  .Homecustombackground{
-    
+  .homeTitle1 {
+    font-size: 4vw;
+    width: 60vw;
+    line-height: 2cap;
+  }
+  .Homecustombackground1{
+    height: 80vh;
+  }
+  .home-background{
+    height: 80vh;
+  }
+  .withdraw-accounts-head{
+    font-size:xx-large;
   }
 }
 
@@ -51,6 +62,20 @@
   .home-menu-buttons{
     visibility: hidden;
   }
+  .homeTitle1 {
+    font-size: 6vw;
+    width: 70vw;
+    line-height: 2cap;
+  }
+  .Homecustombackground1{
+    height: 80vh;
+  }
+  .home-background{
+    height: 80vh;
+  }
+  .withdraw-accounts-head{
+    font-size:xx-large;
+  }
 }
 
 @media screen and (max-width: 430px){
@@ -76,6 +101,21 @@
   }
   .home-menu-buttons{
     visibility: visible;
+  }
+  .homeTitle1 {
+    font-size: 8.5vw;
+    width: 100vw;
+    text-align: center;
+    line-height: 1.8cap;
+  }
+  .Homecustombackground1{
+    height: 60vh;
+  }
+  .home-background{
+    height: 60vh;
+  }
+  .withdraw-accounts-head{
+    font-size:larger;
   }
 }
 
@@ -166,7 +206,7 @@
   color: white;
   top: 0;
   right: 0;
-  padding: 10px;
+  padding: 10px 5px 10px 5px;
   cursor: pointer;
   background-color: white;
 }
@@ -194,9 +234,8 @@
   background-color: white;
 }
 
-.Homecustombackground{
-  background-image: url('../../photos/Interfaceimage.jpg');
-  height: 80vh;
+.Homecustombackground1{
+  background-image: url('../../photos/UserHomePage.jpg');
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
@@ -209,14 +248,34 @@
 
 .home-background{
   width: 100vw;
-  height: 80vh;
-  background: linear-gradient(to right, rgba(2, 38, 72, 0.87), rgba(2, 64, 53, 0.1));
+  background: linear-gradient(to right, rgba(80, 169, 197, 0.48), rgba(4, 28, 51, 0.87));
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
+.homeTitle1 {
+  font-weight: bold;
+  color: #E7FFB4;
+  padding: 2vw;
+}
 
+.withdraw-accounts{
+  background-color: #C2E4FD;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  padding: 30px;
+}
+
+.withdraw-accounts-head{
+  font-weight: bold;
+  text-align: center;
+  color: #0C1674;
+}
 
 
 
@@ -341,19 +400,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: transparent;
   }
-  .Homecustombackground1{
-    background-color: rgba(255,255,255,0.6);
-    background-image: url('../../photos/UserHomePage.jpg'); /* Replace with the path to your image */
-    background-size: cover; /* Adjust to your needs */
-    background-position: center; /* Adjust to your needs */
-    /* Other background properties can be added here */
-    height: 650px;
-    display:flexbox;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position:center;
-    filter: brightness(1);
-  }
   .Homecustombackground4{
     background-color: rgba(255,255,255,0.6);
     background-image: url('../../photos/crypt.jpg'); /* Replace with the path to your image */
@@ -366,19 +412,6 @@
     background-repeat: no-repeat;
     background-position:center;
     filter: brightness(1);
-  }
-  .homeTitle1 {
-    position: relative;
-    padding-top: 15%;
-    padding-left: 10%;
-    padding-bottom: 20%;
-    font-size: 350%;
-    padding-right: 38%;
-    line-height: 180%;
-    color: #E7FFB4;
-    line-gap-override: 1;
-    background-color: rgba(33, 8, 102, 0.473);
-    line-height: 1.1;
   }
   .homeTitle5 {
     position: relative;

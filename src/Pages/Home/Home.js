@@ -6,6 +6,7 @@ import logo from "../../photos/logo.png"
 import { TiThMenu } from "react-icons/ti";
 import profilepicture from '../../photos/profi.png'
 import { MdCloseFullscreen } from "react-icons/md";
+import MovingComponents from '../../Components/UserInterfaceCom/MovingComponents';
 
 const Home = () => {
   const [openButtons, setOpenButtons] = useState(false)
@@ -77,10 +78,14 @@ const Home = () => {
       </div>  
       <div className='Homecustombackground1'>
         <div className='home-background'>
-          <h1 data-aos="fade-up" className='homeTitle1'>
+          <p className='homeTitle1'>
             TRADE AND EARN MONEY WITH SAVE CRYPTO CURRENCY COIN
-          </h1>
+          </p>
         </div>
+      </div>
+      <div className='withdraw-accounts'>
+        <p className='withdraw-accounts-head'>Deposit and Withdraw Method</p>
+        <MovingComponents/>
       </div>
       {openButtons && (<div className='home-menu-buttons'>
           <div className='home-close-button' onClick={()=>setOpenButtons(false)}>
