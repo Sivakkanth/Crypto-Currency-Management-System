@@ -1,8 +1,8 @@
 import axios from 'axios';
-import './Signup/Register.css'
+import './Deposit/Deposit.css'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
-
+import logo from '../photos/logo.png'
 
 export default function Personal() {
   const[user,setUsers]=useState({
@@ -32,9 +32,10 @@ export default function Personal() {
   }
 
   return (
-    <div className='b1'>
-      <form style={{backgroundColor:'transparent'}}>
-        <h3 className='Header'>Personal Details</h3>
+    <div className='deposit-b1'>
+    <img className="logo-deposit" src={logo}/>
+      <form className="deposit-form">
+        <h3 className='deposit-Header'>Personal Details</h3>
         <div className='d3'>   
           <div style={{backgroundColor:'transparent', marginLeft:"50px"}}>
             <ul style={{backgroundColor:'transparent'}}>
@@ -68,15 +69,15 @@ export default function Personal() {
               </li>
             </ul>
           </div>
-          <div style={{margin:"10px",paddingLeft:"50px", paddingRight:"50px"}} className="mai">
+          <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
             <Link style={{margin:"20px", backgroundColor:"lightcyan", color:"darkblue"}} type='close' to={`/Homepage/${id}`} className='btn btn-outline-primary mx-5'>
               Back
             </Link>
             <Link style={{margin:"10px"}} className='btn btn-outline-light mx-5' to={`/Updatepage/${user.id}`}>Update</Link>
-            <label style={{paddingLeft:"10%"}} className="label" htmlFor='Check'>
+          </div>
+          <label style={{paddingLeft:"10%"}} className="label" htmlFor='Check'>
               If you don't want to the account  <a href={``} style={{color:"red", backgroundColor:"transparent", paddingLeft:"5px"}}>Deactivate</a>
             </label>
-          </div>
         </div>
       </form>
     </div>

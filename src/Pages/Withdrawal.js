@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './Signup/Register.css'
+import './Deposit/Deposit.css'
 import { Link, useParams, useNavigate } from "react-router-dom";
+import logo from '../photos/logo.png'
 
 export default function Withdrawal() {
   const[user,setUsers]=useState({
@@ -58,13 +59,21 @@ export default function Withdrawal() {
     });
   };
   return (
-    <div className='b1'>
-      <form style={{backgroundColor:'transparent'}}>
-        <h3 className='Header'>withdrawal</h3>
+<div className='deposit-b1'>
+    <img className="logo-deposit" src={logo}/>
+      <form className="deposit-form">
+        <h3 className='deposit-Header'>withdrawal</h3>
         <div  className='d2'>
           <label style={{paddingLeft:"70px"}} className="label" htmlFor="username">Available Balance : 
             <b style={{backgroundColor:'transparent',paddingLeft:"30px", color:"lightgreen", fontSize:"20px"}}>${user.mabalance}</b>
             </label>
+            <div style={{color:"lightblue", fontSize:"20px", marginTop:"5px", display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
+            <p style={{margin:'0px'}}>select Payment Method</p>
+            <select style={{backgroundColor:'black', margin:'0px', padding:'5px', width:'auto'}} id="servicequality">
+              <option>People's Bank</option>
+              <option>BOC</option>
+            </select>
+            </div>
           <label style={{marginTop:"30px"}} className="label" htmlFor="username">Enter withdrawal Amount : </label>
           <div style={{backgroundColor:"transparent",color:"lightgreen", paddingLeft:"20px", fontSize:"20px", marginTop:"20px"}}
            className="mia">$
@@ -79,11 +88,11 @@ export default function Withdrawal() {
             <div>
             <p style={{color:"#11AC15", fontSize:"13px", textAlign:"center"}}>{message}</p>
             </div>
-          <div style={{margin:"10px",paddingLeft:"50px", paddingRight:"50px"}} className="mai">
-            <Link style={{background:"darkblue",margin:"20px"}} type='close' className='btn btn-outline-light mx-4' to={`/Homepage/${id}`}>
+          <div style={{display:"flex", flexDirection:"row", alignItems:'center',justifyContent:'space-evenly',margin:"10px"}}>
+            <Link style={{background:"darkblue",margin:"20px"}} type='close' className='btn btn-outline-light' to={`/Homepage/${id}`}>
               Back
             </Link>
-            <button style={{background:"darkgreen"}} type="Submit" onClick={handlewithdrawal} className='btn btn-outline-light mx-5'>
+            <button style={{background:"darkgreen"}} type="Submit" onClick={handlewithdrawal} className='btn btn-outline-light'>
               withdrawal
             </button>
           </div>

@@ -1,10 +1,15 @@
 import axios, { Axios } from 'axios';
-import './cryptolist.css';
-import '../Pages/Home/Home.css';
+import './Home/Home.css';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import logo from "../photos/logo.png"
+import { TiThMenu } from "react-icons/ti";
+import profilepicture from '../photos/profi.png'
+import { MdCloseFullscreen } from "react-icons/md";
+import MovingComponents from '../Components/UserInterfaceCom/MovingComponents';
 
 export default function CoinWallet() {
+  const [openButtons, setOpenButtons] = useState(false)
   const [user,setUser]=useState({
     firstName:"",
     userName:"",
@@ -63,92 +68,93 @@ export default function CoinWallet() {
     }, []);
 
   return (
-    <div>
-      <main className='m1'>
-        <section className='s1'>
-            <h2 style={{color:'lightgreen',paddingLeft:"68%",fontSize:"180%"}}>
-            ${user.mabalance}
-            <select onChange={handleOptionSelect} style={{color:'lightgreen',fontSize:"80%", border:"2px solid #FFFFFF", marginLeft:"10%",width:"50%"}}>
-              <option value="Home">{user.firstName}</option>
-              <option value="PersonalData">Personal Data</option>
-              <option value="Deposit">Deposit</option>
-              <option value="Withdrawal">Withdrawal</option>
-              <option value="CoinWallet">Coin Wallet</option>
-              <option value="Trade">Trade</option>
-              <option value="Participants">Participants</option>
-              <option value="Logout">Logout</option>
-            </select>
-            </h2>
-        </section>
-        <section>
-          <div className='Homecustombackground4'>
-            <nav>
-              <ul className="menuItems">
-                <li style={{backgroundColor:"transparent", paddingBottom:"0px"}}><a style={{backgroundColor:"transparent"}} href={`/Send/${id}`} data-item='SEND'>SEND</a></li>
-                <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Receive/${id}`} value="RECIEVE" data-item='RECIEVE'>RECIEVE</a></li>
-                <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Swap/${id}`} value="SWAP" data-item='SWAP'>SWAP</a></li>
-                <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Coinas/${id}`} value="COIN" data-item='COIN'>COIN</a></li>
-                <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Cashas/${id}`} value="CASH" data-item='CASH'>CASH</a></li>
-                <h3 style={{border:"3px solid white", borderRadius:"20px",paddingBottom:"10px",color:'lightgreen', backgroundColor:"#4C275B", fontSize:"120%", textAlign:"center"}}>Coin Balance
-                <h3 style={{color:'lightgreen', backgroundColor:"#4C275B", fontSize:"120%", textAlign:"center"}}>${user.cabalance}</h3></h3>
-              </ul>
-            </nav>
-            <h1 data-aos="fade-up" className='homeTitle5'>
-              EXCHANGE AND SAVE YOUR CRYPTO CURRENCIES COINS
-            </h1>
-            <div className="cryptolist">
-            <h1>All Cryptocurrencies</h1>
-            <input type="text"
-                placeholder="Search..."
-                onChange={(e) => {
-                    setSearch(e.target.value);
-                }}
-            />
-            <table style={{backgroundColor:"white"}}>
-                <thead>
-                    <tr>
-                        <td>Rank</td>
-                        <td>Name</td>
-                        <td>Symbol</td>
-                        <td>Market Cap</td>
-                        <td>Price</td>
-                        <td>Available Supply</td>
-                        <td>Volume(24hrs)</td>
-                    </tr>
-                </thead>
-                {/* Mapping all the cryptos */}
-                <tbody style={{backgroundColor:"white"}}>
-                    {/* Filtering to check for the searched crypto */}
-                    {crypto
-                        .filter((val) => {
-                            return val.name.toLowerCase().includes(search.toLowerCase());
-                        })
-                        .map((val, id) => {
-                            return (
-                                <>
-                                    <tr id={id}>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="rank">{val.rank}</td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="logo">
-                                            <a style={{backgroundColor:"aliceblue"}} href={val.websiteUrl}>
-                                              <img style={{backgroundColor:"aliceblue", fontSize:"5px",width:"30px",height:"30px"}} src={val.icon} alt="logo" width="30px" />
-                                            </a>
-                                            <p style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}}>{val.name}</p>
-                                        </td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}} className="symbol">{val.symbol}</td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.marketCap}</td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.price.toFixed(2)}</td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.availableSupply}</td>
-                                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.volume.toFixed(0)}</td>
-                                    </tr>
-                                </>
-                            );
-                        })}
-                </tbody>
-            </table>
+    <div className='home-main'>
+      <div className='home-m1'>
+        <img className='logo-home' src={logo} alt="Crypto Currency Wallet"/>
+        <div className='home-menu-button' onClick={()=>setOpenButtons(true)}>
+          <p className='home-balance'>${user.mabalance}.00</p>
+          <TiThMenu onClick={()=>setOpenButtons(true)} style={{ color: 'black', fontSize: '24px' }}/>
         </div>
+        <div className='home-buttons'>
+        <p className='home-balance'>${user.mabalance}.00</p>
+          <select onChange={handleOptionSelect} className='home-select-button'>
+            <option className='home-select-button-option' value="Home">{user.firstName}</option>
+            <option className='home-select-button-option' value="PersonalData">Personal Data</option>
+            <option className='home-select-button-option' value="Deposit">Deposit</option>
+            <option className='home-select-button-option' value="Withdrawal">Withdrawal</option>
+            <option className='home-select-button-option' value="CoinWallet">Coin Wallet</option>
+            <option className='home-select-button-option' value="Trade">Trade</option>
+            <option className='home-select-button-option' value="Participants">Participants</option>
+            <option className='home-select-button-option' value="Logout">Logout</option>
+          </select>
+          <img className='home-profile-photo' src={profilepicture}/>
+        </div>
+      </div>
+      <div style={{height:'100px'}}>
+        <nav>
+          <ul className="menuItems">
+            <li style={{backgroundColor:"transparent", paddingBottom:"0px"}}><a style={{backgroundColor:"transparent"}} href={`/Send/${id}`} data-item='SEND'>SEND</a></li>
+            <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Receive/${id}`} value="RECIEVE" data-item='RECIEVE'>RECIEVE</a></li>
+            <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Swap/${id}`} value="SWAP" data-item='SWAP'>SWAP</a></li>
+            <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Coinas/${id}`} value="COIN" data-item='COIN'>COIN</a></li>
+            <li style={{backgroundColor:"transparent"}}><a style={{backgroundColor:"transparent"}} href={`/Cashas/${id}`} value="CASH" data-item='CASH'>CASH</a></li>
+            <div  style={{border:"3px solid white", borderRadius:"20px",padding:"10px",margin:'25px',height:'80%',color:'lightgreen', backgroundColor:"#4C275B", fontSize:"120%"}}>
+            <h5>Coin Balance</h5>
+            <h4 style={{color:'lightgreen', backgroundColor:"transparent", textAlign:"center"}}>${user.cabalance}</h4>
+            </div>
+          </ul>
+        </nav>
+        </div>
+        <div className='Homecustombackground4'>
+          <div className='home-background'>
+            <p className='homeTitle1'>
+              EXCHANGE AND SAVE YOUR CRYPTO CURRENCIES COINS
+            </p>
           </div>
-        </section>
-      </main>
+        </div>
+        <div className="cryptolist">
+          <h1 style={{textAlign:'center'}}>All Cryptocurrencies</h1>
+          <input type="text" placeholder="Search..." onChange={(e) => {setSearch(e.target.value)}}/>
+          <table style={{backgroundColor:"white"}}>
+            <thead>
+              <tr>
+                <td>Rank</td>
+                <td>Name</td>
+                <td>Symbol</td>
+                <td>Market Cap</td>
+                <td>Price</td>
+                <td>Available Supply</td>
+                <td>Volume(24hrs)</td>
+              </tr>
+            </thead>
+            <tbody style={{backgroundColor:"white"}}>
+              {crypto
+                .filter((val) => { 
+                  return val.name.toLowerCase().includes(search.toLowerCase());
+                  })
+                .map((val, id) => {
+                  return (
+                    <>
+                      <tr id={id}>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="rank">{val.rank}</td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="logo">
+                          <a style={{backgroundColor:"aliceblue"}} href={val.websiteUrl}>
+                            <img style={{backgroundColor:"aliceblue", fontSize:"5px",width:"30px",height:"30px"}} src={val.icon} alt="logo" width="30px" />
+                          </a>
+                          <p style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}}>{val.name}</p>
+                        </td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}} className="symbol">{val.symbol}</td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.marketCap}</td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.price.toFixed(2)}</td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.availableSupply}</td>
+                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.volume.toFixed(0)}</td>
+                      </tr>
+                    </>
+                  );
+                  })}
+            </tbody>
+          </table>
+      </div>
     </div>
   )
 }

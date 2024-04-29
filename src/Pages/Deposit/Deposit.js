@@ -65,15 +65,19 @@ export default function Deposit() {
       <form className="deposit-form">
         <h3 className='deposit-Header'>DEPOSIT</h3>
         <div className='deposit-d2'>
-          <div>
-            select Payment Method
-          </div>
+          
           <div className='deposit-d1'>
           <label style={{paddingLeft:"70px"}} className="label" htmlFor="username">Available Balance : 
               <b style={{backgroundColor:'transparent',paddingLeft:"30px", color:"lightgreen", fontSize:"20px"}}>${user.mabalance}</b>
           </label>
-          
-          <label style={{marginTop:"35px"}} className="label" htmlFor="username">Enter Deposit Amount : </label>
+          <div style={{color:"lightblue", fontSize:"20px", marginTop:"5px", display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
+            <p style={{margin:'0px'}}>select Payment Method</p>
+            <select style={{backgroundColor:'black', margin:'0px', padding:'5px', width:'auto'}} id="servicequality">
+              <option>People's Bank</option>
+              <option>BOC</option>
+            </select>
+            </div>
+          <label style={{marginTop:"25px"}} className="label" htmlFor="username">Enter Deposit Amount : </label>
           <div style={{backgroundColor:"transparent",color:"lightgreen", paddingLeft:"20px", fontSize:"20px", marginTop:"5px"}}
            className="mia">$
             <input type="number" style={{margin:"10px", backgroundColor:"silver", width:"200px", border:"5px solid green", borderRadius:"15px"}}
@@ -82,16 +86,16 @@ export default function Deposit() {
             <select id="servicequality">
               <option>USD</option>
               <option>LKR</option>
-          </select>
+            </select>
             </div>
             <div>
             <p style={{color:"#11AC15", fontSize:"13px", textAlign:"center"}}>{message}</p>
             </div>
-          <div style={{margin:"10px",paddingLeft:"50px", paddingRight:"50px"}} className="mai">
-            <Link style={{margin:"20px"}} type='close' className='btn btn-outline-light mx-4' to={`/Homepage/${id}`}>
+          <div style={{display:"flex", flexDirection:"row", alignItems:'center',justifyContent:'space-evenly',margin:"10px"}}>
+            <Link type='close' className='btn btn-outline-light' to={`/Homepage/${id}`}>
               Back
             </Link>
-            <button style={{margin:"10px"}} type="Submit" onClick={handleDeposit} className='btn btn-outline-danger mx-5'>
+            <button type="Submit" onClick={handleDeposit} className='btn btn-outline-danger'>
               DEPOSIT
             </button>
           </div>

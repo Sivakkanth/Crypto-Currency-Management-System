@@ -2,6 +2,7 @@ import axios from 'axios';
 import './Signup/Register.css';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import logo from '../photos/logo.png'
 
 const Update = () => {
   let navigate=useNavigate();
@@ -31,12 +32,13 @@ const Update = () => {
   }
 
   return (
-    <div className='b1'>
-      <h3 className="Header">
+<div className='deposit-b1'>
+    <img className="logo-deposit" src={logo}/>
+      <form className="deposit-form">
+        <h3 className='deposit-Header'>
         Update Your Details
       </h3>
-      <form style={{backgroundColor:"transparent"}} onSubmit={(e)=>onSubmit(e)}>
-        <div className='d4'>
+      <div className='d4'>
           <label className="label" htmlFor='UserName'>
             User Name
           </label>

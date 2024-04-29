@@ -401,17 +401,15 @@
     background-color: transparent;
   }
   .Homecustombackground4{
-    background-color: rgba(255,255,255,0.6);
     background-image: url('../../photos/crypt.jpg'); /* Replace with the path to your image */
-    background-size: cover; /* Adjust to your needs */
-    background-position: center; /* Adjust to your needs */
-    /* Other background properties can be added here */
-    height: 650px;
-    display:flexbox;
-    width: 100%;
+    width: 100vw;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position:center;
-    filter: brightness(1);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
   .homeTitle5 {
     position: relative;
@@ -428,29 +426,33 @@
   }
   
   nav {
-    border-radius: 25px;
+    border-radius: 5px;
     border:5px solid rgb(98, 180, 95);
     background-image: linear-gradient(to right,#280935,#820B73 );
-    padding-top: 10px;
-    padding-bottom: 0px;
-    text-align: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
   nav .menuItems {
+    border-radius: 25px;
     list-style: none;
     background-image: linear-gradient(to right,#280935,#820B73 );
     display: flex;
-    text-align: center;
+    flex-direction: row;
+    height: 100%;
+    margin: 0px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
   }
   nav .menuItems li {
-    margin-top: 0.5%;
-    padding-left: 1%;
-    text-align: center;
+    margin: 0;
   }
   nav .menuItems li a {
     text-decoration: none;
-    padding-bottom: 20%;
-    padding-left: 20%;
-    padding-right: 40%;
     color: #afb3b2;
     font-size: 120%;
     font-weight: 40%;
@@ -465,19 +467,23 @@
     box-shadow:5px solid #E7FFB4;
     text-shadow: 5px solid #E7FFB4;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 0;
     overflow: hidden;
   }
-  nav .menuItems li a:hover::before {
-    width: 100%;
-    margin-left: 0.5;
+  nav .menuItems li a:hover{
     transition: all 0.5s ease-in-out;
     background-color: #240864;
     text-align: center;
     border: 2px solid #3fa799;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .cryptolist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
