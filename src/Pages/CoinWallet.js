@@ -7,6 +7,7 @@ import { TiThMenu } from "react-icons/ti";
 import profilepicture from '../photos/profi.png'
 import { MdCloseFullscreen } from "react-icons/md";
 import MovingComponents from '../Components/UserInterfaceCom/MovingComponents';
+import CryptoCurrencyInfo from '../Components/Coinwallet/CryptoCurrencyInfo';
 
 export default function CoinWallet() {
   const [openButtons, setOpenButtons] = useState(false)
@@ -53,20 +54,6 @@ export default function CoinWallet() {
     }
   };
 
-  // Setting up the initial states using
-    // react hook 'useState'
-    const [search, setSearch] = useState("");
-    const [crypto, setCrypto] = useState([]);
- 
-    // Fetching crypto data from the API only
-    // once when the component is mounted
-    useEffect(() => {
-        axios.get(`https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=LKR`)
-        .then((res) => {
-        setCrypto(res.data.coins);
-        });
-    }, []);
-
   return (
     <div className='home-main'>
       <div className='home-m1'>
@@ -84,7 +71,7 @@ export default function CoinWallet() {
             <option className='home-select-button-option' value="Withdrawal">Withdrawal</option>
             <option className='home-select-button-option' value="CoinWallet">Coin Wallet</option>
             <option className='home-select-button-option' value="Trade">Trade</option>
-            <option className='home-select-button-option' value="Participants">Participants</option>
+            <option className='home-select-button-option' value="Participants">LeaderBoard</option>
             <option className='home-select-button-option' value="Logout">Logout</option>
           </select>
           <img className='home-profile-photo' src={profilepicture}/>
@@ -114,46 +101,8 @@ export default function CoinWallet() {
         </div>
         <div className="cryptolist">
           <h1 style={{textAlign:'center'}}>All Cryptocurrencies</h1>
-          <input type="text" placeholder="Search..." onChange={(e) => {setSearch(e.target.value)}}/>
-          <table style={{backgroundColor:"white"}}>
-            <thead>
-              <tr>
-                <td>Rank</td>
-                <td>Name</td>
-                <td>Symbol</td>
-                <td>Market Cap</td>
-                <td>Price</td>
-                <td>Available Supply</td>
-                <td>Volume(24hrs)</td>
-              </tr>
-            </thead>
-            <tbody style={{backgroundColor:"white"}}>
-              {crypto
-                .filter((val) => { 
-                  return val.name.toLowerCase().includes(search.toLowerCase());
-                  })
-                .map((val, id) => {
-                  return (
-                    <>
-                      <tr id={id}>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="rank">{val.rank}</td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}} className="logo">
-                          <a style={{backgroundColor:"aliceblue"}} href={val.websiteUrl}>
-                            <img style={{backgroundColor:"aliceblue", fontSize:"5px",width:"30px",height:"30px"}} src={val.icon} alt="logo" width="30px" />
-                          </a>
-                          <p style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen", margin:"5px"}}>{val.name}</p>
-                        </td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}} className="symbol">{val.symbol}</td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.marketCap}</td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>Rs {val.price.toFixed(2)}</td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.availableSupply}</td>
-                        <td style={{backgroundColor:"aliceblue", fontSize:"15px", color:"darkgreen"}}>{val.volume.toFixed(0)}</td>
-                      </tr>
-                    </>
-                  );
-                  })}
-            </tbody>
-          </table>
+          <input type="text" placeholder="Search..."/>
+          <CryptoCurrencyInfo/>
       </div>
     </div>
   )

@@ -26,7 +26,6 @@ const Users = () => {
               <th scope="col">#</th>
               <th scope="col">First Name</th>
               <th scope="col">User Name</th>
-              <th scope="col">Password</th>
               <th scope="col">Country</th>
               <th scope="col">Main Account Balance</th>
               <th scope="col">Coin Account Balance</th>
@@ -40,7 +39,6 @@ const Users = () => {
                   <th scope="row" key={index}>{index+1}</th>
                   <td>{user.firstName}</td>
                   <td>{user.userName}</td>
-                  <td>{user.password}</td>
                   <td>{user.country}</td>
                   <td>{user.mabalance}</td>
                   <td>{user.cabalance}</td>

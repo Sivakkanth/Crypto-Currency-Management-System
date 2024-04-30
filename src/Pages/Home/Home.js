@@ -70,7 +70,7 @@ const Home = () => {
             <option className='home-select-button-option' value="Withdrawal">Withdrawal</option>
             <option className='home-select-button-option' value="CoinWallet">Coin Wallet</option>
             <option className='home-select-button-option' value="Trade">Trade</option>
-            <option className='home-select-button-option' value="Participants">Participants</option>
+            <option className='home-select-button-option' value="Participants">Leaderboard</option>
             <option className='home-select-button-option' value="Logout">Logout</option>
           </select>
           <img className='home-profile-photo' src={profilepicture}/>

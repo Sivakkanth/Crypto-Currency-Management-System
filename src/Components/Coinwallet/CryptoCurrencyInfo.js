@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-function cryptocurrencytable() {
+function CryptoCurrencyInfo() {
     const [cryptoData, updateCryptoData] = useState([]);
     const [isFetchingData, updateIsFetchingData] = useState(false);
     useEffect(() => {
@@ -45,7 +45,7 @@ function cryptocurrencytable() {
                 )
             });
             return (
-                <table className="table table-striped table-dark">
+                <table className="table table-striped table-light">
                     <thead className="thead-dark">
                         <tr>
                             {tableHeadings}
@@ -72,4 +72,4 @@ function cryptocurrencytable() {
     );
 }
 
-export default cryptocurrencytable;
+export default CryptoCurrencyInfo;

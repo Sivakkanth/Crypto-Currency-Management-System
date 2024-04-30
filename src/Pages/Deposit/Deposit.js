@@ -64,8 +64,7 @@ export default function Deposit() {
     <img className="logo-deposit" src={logo}/>
       <form className="deposit-form">
         <h3 className='deposit-Header'>DEPOSIT</h3>
-        <div className='deposit-d2'>
-          
+        <div className='deposit-d2'>    
           <div className='deposit-d1'>
           <label style={{paddingLeft:"70px"}} className="label" htmlFor="username">Available Balance : 
               <b style={{backgroundColor:'transparent',paddingLeft:"30px", color:"lightgreen", fontSize:"20px"}}>${user.mabalance}</b>
