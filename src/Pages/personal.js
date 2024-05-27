@@ -33,7 +33,7 @@ export default function Personal() {
 
   return (
     <div className='deposit-b1'>
-    <img className="logo-deposit" src={logo}/>
+    <img className="logo-deposit" alt='logo' src={logo}/>
       <form className="deposit-form">
         <h3 className='deposit-Header'>Personal Details</h3>
         <div className='d3'>   

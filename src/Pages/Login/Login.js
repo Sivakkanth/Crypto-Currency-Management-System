@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className='login-b1'>
-      <img className="logo-login" src={logo}/>
+      <img className="logo-login" alt="logo" src={logo}/>
       <form className="login-form">
         <h3 className='login-Header'>LOGIN</h3>
         <div className='login-d1'>

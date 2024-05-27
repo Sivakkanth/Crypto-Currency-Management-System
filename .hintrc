@@ -8,7 +8,11 @@
       {
         "ignore": [
           "user-select",
-          "scrollbar-color"
+          "scrollbar-color",
+          "justify-content: space-evenly",
+          "height: max-content",
+          "touch-action",
+          "touch-action: manipulation"
         ]
       }
     ]

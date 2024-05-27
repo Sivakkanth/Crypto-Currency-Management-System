@@ -74,7 +74,7 @@ export default function CoinWallet() {
             <option className='home-select-button-option' value="Participants">LeaderBoard</option>
             <option className='home-select-button-option' value="Logout">Logout</option>
           </select>
-          <img className='home-profile-photo' src={profilepicture}/>
+          <img className='home-profile-photo' alt='profile' src={profilepicture}/>
         </div>
       </div>
       <div style={{height:'100px'}}>

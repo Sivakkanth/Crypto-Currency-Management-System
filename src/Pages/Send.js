@@ -59,7 +59,7 @@ export default function Send() {
   };
   return (
     <div className='deposit-b1'>
-      <img className="logo-deposit" src={logo}/>
+      <img className="logo-deposit" alt='logo' src={logo}/>
       <form className="deposit-form">
         <h3 className='deposit-Header'>SEND</h3>
         <div  className='d2'>

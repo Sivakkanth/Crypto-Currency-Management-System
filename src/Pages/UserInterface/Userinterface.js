@@ -114,8 +114,8 @@ export default function Userinterface() {
       <div className='Withdraw-Method'>
         <p className='Important-of-Website1'>Coin Withdraw Method</p>
         <div className='Withdraw-Method1'>
-          <img className='Withdraw-Method2' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5ckWh1oJLmIrUkW5g62TiRXCoSGNrDvr_3PU7JBpuQ&s'/>
-          <img className='Withdraw-Method2' src='https://www.logo.wine/a/logo/Binance/Binance-Vertical2-Dark-Background-Logo.wine.svg'/>
+          <img className='Withdraw-Method2' alt='withdrawal' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5ckWh1oJLmIrUkW5g62TiRXCoSGNrDvr_3PU7JBpuQ&s'/>
+          <img className='Withdraw-Method2' alt='withdrawal' src='https://www.logo.wine/a/logo/Binance/Binance-Vertical2-Dark-Background-Logo.wine.svg'/>
         </div>
       </div>
       <div className='Userinterface-Footer'>

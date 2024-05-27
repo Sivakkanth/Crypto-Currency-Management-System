@@ -27,7 +27,7 @@ const Register = () => {
 
   return (
     <div className='signup-b1'>
-      <img className="logo-signup" src={logo}/>
+      <img className="logo-signup" alt='logo' src={logo}/>
       <form className="signup-form" onSubmit={(e)=>onSubmit(e)}>
         <h3 className="signup-Header">
           Ready to get free access to the world of investing?

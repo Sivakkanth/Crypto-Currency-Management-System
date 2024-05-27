@@ -73,7 +73,7 @@ const Home = () => {
             <option className='home-select-button-option' value="Participants">Leaderboard</option>
             <option className='home-select-button-option' value="Logout">Logout</option>
           </select>
-          <img className='home-profile-photo' src={profilepicture}/>
+          <img className='home-profile-photo' alt='profilphoto' src={profilepicture}/>
         </div>
       </div>  
       <div className='Homecustombackground1'>
